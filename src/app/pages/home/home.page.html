@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recetas de Cocina</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToSettings()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar recetas"></ion-searchbar>
+
+  <ion-button expand="full" (click)="searchRecipes()">Buscar</ion-button>
+
+  <!-- Spinner que se muestra mientras los resultados están cargando -->
+  <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+
+  <!-- Lista de recetas obtenidas de la API -->
+  <ion-list *ngIf="!loading && recipes.length > 0">
+    <ion-item *ngFor="let recipe of recipes" (click)="goToRecipeDetail(recipe.id)">
+      <ion-thumbnail slot="start">
+        <img [src]="recipe.image" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ recipe.title }}</h2> <!-- Título de la receta -->
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <p *ngIf="!loading && recipes.length === 0">No se encontraron resultados.</p>
+
+</ion-content>
