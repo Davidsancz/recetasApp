@@ -36,7 +36,7 @@ export class LoginPage {
     try {
       await this.afAuth.signInWithEmailAndPassword(email, password);
       localStorage.setItem('isLoggedIn', 'true');
-      console.log("Login exitoso");
+      console.log("Login exitosooooo");
       this.navCtrl.navigateRoot('/home'); 
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
