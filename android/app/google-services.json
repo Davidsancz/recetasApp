@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "13642937115",
+    "project_id": "pushnoti-891cb",
+    "storage_bucket": "pushnoti-891cb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13642937115:android:0966b42a09f216fe1ad9be",
+        "android_client_info": {
+          "package_name": "com.notipush.chino"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhS75u1_8AHbNY4RrJlRHG-ZTepct79qk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

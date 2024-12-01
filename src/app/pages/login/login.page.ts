@@ -14,7 +14,8 @@ export class LoginPage {
   constructor(
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -48,5 +49,35 @@ export class LoginPage {
   goToRegister() {
     this.navCtrl.navigateForward('/register');
   }
+  
+
+  requestPermission(){
+    Notification.requestPermission().then((permission) => {
+      if (permission == 'granted') {
+        console.log('Permiso concedido');
+      } else {
+        console.log('Permiso Denegado')
+      }
+    });
+  }
+
+  sendNotification() {
+    const options = {
+      body: 'Nueva notificación',
+      icon: 'assets/icon/favicon.png',
+      actions: [
+        { action: 'open', title: 'Abrir App'},
+        { action: 'close', title: 'Cerrar Notificación'},
+      ],
+    };
+
+    const notification = new Notification('Hello User', options);
+
+    notification.onclick = (event) => {
+      event.preventDefault();
+      console.log('Notificación clickeada');
+    };
+  }
+
 
 }

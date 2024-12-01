@@ -8,6 +8,7 @@ import { NavController, AlertController } from '@ionic/angular';
   styleUrls: ['./home.page.scss'], 
 })
 export class HomePage {
+  
 
   searchQuery: string = ''; // Almacena la consulta de búsqueda ingresada.
   recipes: any[] = []; // Guarda las recetas obtenidas de la API.
@@ -60,5 +61,35 @@ export class HomePage {
     if (!isLoggedIn) {
       this.navCtrl.navigateRoot('/login');
     }
+  }
+
+
+  
+  requestPermission() {
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        console.log('Permiso concedido');
+      } else {
+        console.log('Permiso denegado');
+      }
+    });
+  }
+
+  sendNotification() {
+    const options = {
+      body: 'Gracias por usar la aplicación SaboresBase',
+      icon: 'assets/icon/favicon.png',
+      actions: [
+        { action: 'open', title: 'Abrir App' },
+        { action: 'close', title: 'Cerrar Notificación' },
+      ],
+    };
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((registration) => {
+        registration.showNotification('¡Hola usuario!', options);
+      });
+    }
+
   }
 }
