@@ -1,0 +1,92 @@
+{
+  "id": "edc85b7c-f04f-4dc9-9426-8122eaa1ebef",
+  "version": "2.0",
+  "name": "PruebaLogin",
+  "url": "http://localhost:8100",
+  "tests": [{
+    "id": "41e635e4-97ae-4a70-8583-5430fb8b7673",
+    "name": "PruebaLogin",
+    "commands": [{
+      "id": "b0fd602a-7223-41b0-ad7f-1e709eb4891c",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c985d242-9e2b-4756-a581-5a8b76489231",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1281x729",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ddee03df-97aa-42f7-9123-a2188bdf733e",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "20"
+    }, {
+      "id": "18f7f705-c08b-4b6e-98f6-eb125de4e07d",
+      "comment": "",
+      "command": "click",
+      "target": "id=ion-input-0",
+      "targets": [
+        ["id=ion-input-0", "id"],
+        ["name=ion-input-0", "name"],
+        ["css=#ion-input-0", "css:finder"],
+        ["xpath=//input[@id='ion-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56d44cc2-0dfb-4b2a-9bfb-ff01ca4ab685",
+      "comment": "",
+      "command": "type",
+      "target": "id=ion-input-0",
+      "targets": [
+        ["id=ion-input-0", "id"],
+        ["name=ion-input-0", "name"],
+        ["css=#ion-input-0", "css:finder"],
+        ["xpath=//input[@id='ion-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "prueba1@gmail.com"
+    }, {
+      "id": "68b403b8-63c2-4d65-8317-d0fe28904c64",
+      "comment": "",
+      "command": "type",
+      "target": "id=ion-input-1",
+      "targets": [
+        ["id=ion-input-1", "id"],
+        ["name=ion-input-1", "name"],
+        ["css=#ion-input-1", "css:finder"],
+        ["xpath=//input[@id='ion-input-1']", "xpath:attributes"],
+        ["xpath=//ion-item[2]/ion-input/label/div[2]/input", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "5918ef74-4212-4575-8975-1ddc63700973",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-solid",
+      "targets": [
+        ["css=.button-solid", "css:finder"],
+        ["xpath=//ion-button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/ion-button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "6a155234-8c79-458f-a505-c66f690326e4",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["41e635e4-97ae-4a70-8583-5430fb8b7673"]
+  }],
+  "urls": ["http://localhost:8100/"],
+  "plugins": []
+}
